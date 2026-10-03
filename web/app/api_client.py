@@ -64,13 +64,13 @@ def obtener_categorias():
     TODO 8: Igual que obtener_productos() pero apuntando a
             f"{current_app.config['API_URL']}/categorias/" y sin parámetros.
     """
-    obtener_categorias_url = f"{current_app.config['API_URL']}/categorias/"
+    url = f"{current_app.config['API_URL']}/categorias/"
     try:
-        respuesta = requests.get(obtener_categorias_url, timeout=TIMEOUT)
+        respuesta = requests.get(url, timeout=TIMEOUT)
         if respuesta.status_code == 200:
             return respuesta.json()
         else:
             return []
     except requests.RequestException:
         return []
-    pass
+    
