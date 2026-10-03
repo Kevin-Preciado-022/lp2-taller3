@@ -24,6 +24,7 @@ def index():
     categorias = api_client.obtener_categorias()
     # TODO 3: render_template("index.html", productos=productos,
     # categorias=categorias, categoria_id=categoria_id)
+    render_template("index.html", productos=productos, categorias=categorias, categoria_id=categoria_id)
     pass
 
 
