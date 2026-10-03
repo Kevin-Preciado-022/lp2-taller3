@@ -15,6 +15,7 @@ from . import models
 def obtener_productos(db: Session, categoria_id: Optional[int] = None):
     """Retorna la lista de productos, opcionalmente filtrada por categoría."""
     # TODO 1: construye la consulta base: db.query(models.Producto)
+    db.query(models.Producto)
     # TODO 2: si categoria_id no es None, agrega
     #         .filter(models.Producto.categoria_id == categoria_id)
     # TODO 3: retorna el resultado con .all()
