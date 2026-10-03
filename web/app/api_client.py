@@ -28,6 +28,7 @@ def obtener_productos(categoria_id=None):
             la página no se rompa si la API está caída).
     """
     url = f"{current_app.config['API_URL']}/productos/"
+    parametros = {"categoria_id": categoria_id} if categoria_id is not None else {}
     pass
 
 
