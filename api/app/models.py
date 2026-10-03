@@ -58,6 +58,7 @@ class Producto(Base):
 
     def __repr__(self):
         # TODO 5: retorna f"<Producto {self.sku} - {self.nombre}>"
+        return f"<Producto {self.sku} - {self.nombre}>"
         pass
 
     @property
