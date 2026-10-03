@@ -29,6 +29,12 @@ def obtener_productos(categoria_id=None):
     """
     url = f"{current_app.config['API_URL']}/productos/"
     parametros = {"categoria_id": categoria_id} if categoria_id is not None else {}
+    try:
+        respuesta = requests.get(url, params=parametros, timeout=TIMEOUT)
+        if respuesta.status_code == 200:
+            return respuesta.json()
+        else:
+            return []
     pass
 
 
