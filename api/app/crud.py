@@ -27,7 +27,7 @@ def obtener_productos(db: Session, categoria_id: Optional[int] = None):
 def obtener_producto_por_sku(db: Session, sku: str):
     """Retorna un producto por su SKU, o None si no existe."""
     # TODO 4: db.query(models.Producto).filter(models.Producto.sku == sku).first()
-    db.query(models.Producto).filter(models.Producto.sku == sku).first()
+    return db.query(models.Producto).filter(models.Producto.sku == sku).first()
     pass
 
 

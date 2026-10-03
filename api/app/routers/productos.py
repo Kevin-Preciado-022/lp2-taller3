@@ -21,6 +21,7 @@ router = APIRouter(prefix="/productos", tags=["productos"])
 def listar_productos(categoria_id: Optional[int] = None, db: Session = Depends(get_db)):
     """Lista productos. Admite ?categoria_id=<id> como filtro opcional."""
     # TODO 1: llama a crud.obtener_productos(db, categoria_id) y retórnalo
+    return crud.obtener_productos(db, categoria_id)
     pass
 
 
