@@ -35,4 +35,5 @@ def obtener_producto(sku: str, db: Session = Depends(get_db)):
     if producto is None:
         raise HTTPException(status_code=404, detail="Producto no encontrado")
     # TODO 4: si existe, retórnalo (FastAPI lo serializa con ProductoBase)
+    return producto
     pass
