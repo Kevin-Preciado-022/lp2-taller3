@@ -42,7 +42,8 @@ def cargar_datos():
         #   c) Si ya existe un producto con ese sku
         #      (db.query(Producto).filter_by(sku=item["sku"]).first()),
         #      sáltalo con 'continue' para no duplicar.
-        
+        if db.query(Producto).filter_by(sku=item["sku"]).first():
+            continue
         #   d) Crea el Producto con los campos del JSON y
         #      categoria_id=categoria.id, y agrégalo con db.add(producto).
 
