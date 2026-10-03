@@ -66,4 +66,5 @@ class Producto(Base):
     def disponible(self):
         """True si el producto está activo y tiene unidades en stock."""
         # TODO 6: misma lógica del Taller 2 (self.activo and self.stock > 0)
+        return self.activo and self.stock > 0
         pass
