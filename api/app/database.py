@@ -10,7 +10,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 # TODO 1: Lee la variable de entorno DATABASE_URL (definida en
 #         docker-compose.yml) usando os.environ["DATABASE_URL"]
-DATABASE_URL = None
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 # TODO 2: Crea el engine de SQLAlchemy con create_engine(DATABASE_URL)
 engine = None
