@@ -48,8 +48,9 @@ def obtener_producto(sku):
     TODO 7: Si respuesta.status_code == 200, retorna respuesta.json()
             Si es 404 (u otro código), retorna None.
     """
-    pass
-
+        url = f"{current_app.config['API_URL']}/productos/{sku}"
+        try:
+            respuesta = requests.get(url, timeout=TIMEOUT)
 
 def obtener_categorias():
     """Retorna la lista de categorías (dicts) desde la API.
