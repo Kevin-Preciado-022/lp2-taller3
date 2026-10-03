@@ -34,4 +34,5 @@ def obtener_producto_por_sku(db: Session, sku: str):
 def obtener_categorias(db: Session):
     """Retorna todas las categorías ordenadas por nombre."""
     # TODO 5: db.query(models.Categoria).order_by(models.Categoria.nombre).all()
+    return db.query(models.Categoria).order_by(models.Categoria.nombre).all()
     pass
