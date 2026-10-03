@@ -55,6 +55,7 @@ class Producto(Base):
 
     # TODO 4: Define el lado complementario de la relación:
     #   categoria = relationship("Categoria", back_populates="productos")
+    categoria = relationship("Categoria", back_populates="productos")
 
     def __repr__(self):
         # TODO 5: retorna f"<Producto {self.sku} - {self.nombre}>"
