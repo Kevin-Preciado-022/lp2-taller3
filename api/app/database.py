@@ -13,7 +13,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 # TODO 2: Crea el engine de SQLAlchemy con create_engine(DATABASE_URL)
-engine = None
+engine = create_engine(DATABASE_URL)
 
 # TODO 3: Crea la fábrica de sesiones:
 #   SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
