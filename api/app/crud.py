@@ -18,6 +18,7 @@ def obtener_productos(db: Session, categoria_id: Optional[int] = None):
     db.query(models.Producto)
     # TODO 2: si categoria_id no es None, agrega
     #         .filter(models.Producto.categoria_id == categoria_id)
+    .filter(models.Producto.categoria_id == categoria_id)
     # TODO 3: retorna el resultado con .all()
     pass
 
