@@ -35,7 +35,8 @@ def obtener_productos(categoria_id=None):
             return respuesta.json()
         else:
             return []
-    pass
+        except requests.RequestException:
+                return []
 
 
 def obtener_producto(sku):
