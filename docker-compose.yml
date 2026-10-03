@@ -26,7 +26,6 @@ services:
       # conectarte con un cliente SQL (DBeaver, psql, etc.) desde WSL2/Windows.
       - "5432:5432"
     healthcheck:
-    
       # TODO 1: Completa el comando que verifica si Postgres ya está listo
       #         para aceptar conexiones. Pista: pg_isready acepta -U <usuario>
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
@@ -58,10 +57,10 @@ services:
     restart: unless-stopped
     environment:
       SECRET_KEY: ${SECRET_KEY}
-     
-      API_URL: http://api:8000 # TODO 3: Indica la URL base de la API vista DESDE OTRO CONTENEDOR.
+      # TODO 3: Indica la URL base de la API vista DESDE OTRO CONTENEDOR.
       #         No es http://localhost:8000 (eso apuntaría al propio
-      #         contenedor 'web'); debe usar el nombre del servicio "api".//api:8000
+      #         contenedor 'web'); debe usar el nombre del servicio "api".
+      API_URL: http://api:8000
     depends_on:
       # TODO 4: Declara que 'web' depende de que el servicio 'api' esté
       #         corriendo antes de iniciar (usa la misma sintaxis de arriba,
