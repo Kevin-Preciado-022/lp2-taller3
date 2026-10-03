@@ -34,13 +34,13 @@ class ProductoBase(BaseModel):
 
     # TODO 2: agrega los campos que faltan, con el tipo correcto:
        marca: str
-    #   nombre: str
-    #   precio: float
-    #   foto: str | None = None
-    #   stock: int
-    #   activo: bool
-    #   disponible: bool         # propiedad calculada del modelo
-    #   categoria: CategoriaBase # esquema anidado (objeto completo, no solo el id)
+       nombre: str
+       precio: float
+       foto: str | None = None
+       stock: int
+       activo: bool
+       disponible: bool         # propiedad calculada del modelo
+       categoria: CategoriaBase # esquema anidado (objeto completo, no solo el id)
 
     class Config:
         from_attributes = True
