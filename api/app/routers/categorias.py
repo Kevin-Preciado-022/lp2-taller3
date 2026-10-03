@@ -20,4 +20,5 @@ router = APIRouter(prefix="/categorias", tags=["categorias"])
 def listar_categorias(db: Session = Depends(get_db)):
     """Lista todas las categorías registradas."""
     # TODO 1: llama a crud.obtener_categorias(db) y retórnalo
+    return crud.obtener_categorias(db)
     pass
