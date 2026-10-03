@@ -28,6 +28,8 @@ def cargar_datos():
         # TODO 1: Abre RUTA_PRODUCTOS con encoding="utf-8" y usa json.load()
         #         para obtener la lista de productos.
         # datos = ...
+        with open(RUTA_PRODUCTOS, encoding="utf-8") as f:
+            datos = json.load(f)
 
         # TODO 2: Por cada item en 'datos':
         #   a) Busca la categoría por nombre:
