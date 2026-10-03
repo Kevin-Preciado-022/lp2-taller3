@@ -18,6 +18,7 @@ class CategoriaBase(BaseModel):
     id: int
 
     # TODO 1: agrega el campo 'nombre: str'
+    nombre: str
 
     class Config:
         # Permite construir este esquema directamente a partir de un
@@ -32,7 +33,7 @@ class ProductoBase(BaseModel):
     sku: str
 
     # TODO 2: agrega los campos que faltan, con el tipo correcto:
-    #   marca: str
+       marca: str
     #   nombre: str
     #   precio: float
     #   foto: str | None = None
