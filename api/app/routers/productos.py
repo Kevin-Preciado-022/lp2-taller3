@@ -22,7 +22,7 @@ def listar_productos(categoria_id: Optional[int] = None, db: Session = Depends(g
     """Lista productos. Admite ?categoria_id=<id> como filtro opcional."""
     # TODO 1: llama a crud.obtener_productos(db, categoria_id) y retórnalo
     return crud.obtener_productos(db, categoria_id)
-    pass
+    
 
 
 @router.get("/{sku}", response_model=schemas.ProductoBase)
@@ -36,4 +36,4 @@ def obtener_producto(sku: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Producto no encontrado")
     # TODO 4: si existe, retórnalo (FastAPI lo serializa con ProductoBase)
     return producto
-    pass
+    

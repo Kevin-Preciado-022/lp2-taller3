@@ -26,7 +26,6 @@ class Categoria(Base):
     def __repr__(self):
         # TODO 2: retorna f"<Categoria {self.nombre}>"
         return f"<Categoria {self.nombre}>"
-        pass
 
 
 class Producto(Base):
@@ -60,11 +59,11 @@ class Producto(Base):
     def __repr__(self):
         # TODO 5: retorna f"<Producto {self.sku} - {self.nombre}>"
         return f"<Producto {self.sku} - {self.nombre}>"
-        pass
+        
 
     @property
     def disponible(self):
         """True si el producto está activo y tiene unidades en stock."""
         # TODO 6: misma lógica del Taller 2 (self.activo and self.stock > 0)
         return self.activo and self.stock > 0
-        pass
+        

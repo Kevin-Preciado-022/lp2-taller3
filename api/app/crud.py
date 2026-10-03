@@ -21,18 +21,18 @@ def obtener_productos(db: Session, categoria_id: Optional[int] = None):
     .filter(models.Producto.categoria_id == categoria_id)
     # TODO 3: retorna el resultado con .all()
     return .all()
-    pass
+    
 
 
 def obtener_producto_por_sku(db: Session, sku: str):
     """Retorna un producto por su SKU, o None si no existe."""
     # TODO 4: db.query(models.Producto).filter(models.Producto.sku == sku).first()
     return db.query(models.Producto).filter(models.Producto.sku == sku).first()
-    pass
+    
 
 
 def obtener_categorias(db: Session):
     """Retorna todas las categorías ordenadas por nombre."""
     # TODO 5: db.query(models.Categoria).order_by(models.Categoria.nombre).all()
     return db.query(models.Categoria).order_by(models.Categoria.nombre).all()
-    pass
+    
