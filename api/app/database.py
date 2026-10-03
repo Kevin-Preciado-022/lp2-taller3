@@ -17,7 +17,7 @@ engine = create_engine(DATABASE_URL)
 
 # TODO 3: Crea la fábrica de sesiones:
 #   SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-SessionLocal = None
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Clase base de la que heredarán todos los modelos (models.py)
 Base = declarative_base()
