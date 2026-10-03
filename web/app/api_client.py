@@ -27,6 +27,7 @@ def obtener_productos(categoria_id=None):
             En cualquier otro caso, retorna una lista vacía [] (para que
             la página no se rompa si la API está caída).
     """
+    url = f"{current_app.config['API_URL']}/productos/"
     pass
 
 
