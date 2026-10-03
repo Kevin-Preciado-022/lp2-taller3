@@ -18,6 +18,7 @@ class Categoria(Base):
     # TODO 1: Define la columna 'nombre': String(80), nullable=False,
     #         unique=True (igual que en el Taller 2).
     # nombre = Column(...)
+    nombre = Column(String(80), nullable=False, unique=True)
 
     # Relación uno-a-muchos. 'back_populates' exige declarar el lado
     # complementario en el modelo Producto (ver más abajo).
