@@ -49,7 +49,7 @@ def cargar_datos():
         categoria = db.query(Categoria).filter_by(nombre=item["categoria"]).first()
 
         # TODO 3: Confirma todo con db.commit()
-        
+        db.commit()
 
         # TODO 4: Imprime cuántos productos se cargaron, por ejemplo:
         #         print(f"Se cargaron {len(datos)} productos.")
