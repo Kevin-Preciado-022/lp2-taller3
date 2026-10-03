@@ -43,8 +43,13 @@ class Producto(Base):
     #   stock  -> Integer,     nullable=False, default=0
     #   activo -> Boolean,     nullable=False, default=True
     #
-    # sku = Column(...)
-    # ...
+     sku = Column(String(20), unique=True, nullable=False)
+    marca = Column(String(80), nullable=False)
+    nombre = Column(String(160), nullable=False)
+    precio = Column(Float, nullable=False)
+    foto = Column(String(200), nullable=True)
+    stock = Column(Integer, nullable=False, default=0)
+    activo = Column(Boolean, nullable=False, default=True)
 
     categoria_id = Column(Integer, ForeignKey("categorias.id"), nullable=False)
 
