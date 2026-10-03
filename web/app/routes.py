@@ -43,4 +43,4 @@ def categorias():
     # TODO 7: categorias = api_client.obtener_categorias()
     categorias = api_client.obtener_categorias()
     # TODO 8: render_template("categorias.html", categorias=categorias)
-    pass
+    return render_template("categorias.html", categorias=categorias)
