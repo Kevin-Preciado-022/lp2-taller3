@@ -51,7 +51,12 @@ def obtener_producto(sku):
         url = f"{current_app.config['API_URL']}/productos/{sku}"
         try:
             respuesta = requests.get(url, timeout=TIMEOUT)
-                
+                if respuesta.status_code == 200:
+                        return respuesta.json()
+                else:
+                        return None
+        except requests.RequestException:
+                return None
 
 def obtener_categorias():
     """Retorna la lista de categorías (dicts) desde la API.
