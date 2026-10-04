@@ -24,8 +24,8 @@ app = FastAPI(
 )
 
 # TODO 2: Registra los routers de productos y categorías con
-         app.include_router(productos.router)
-         app.include_router(categorias.router)
+app.include_router(productos.router)
+app.include_router(categorias.router)
 
 
 @app.get("/")
