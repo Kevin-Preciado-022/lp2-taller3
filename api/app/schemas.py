@@ -31,8 +31,6 @@ class ProductoBase(BaseModel):
 
     id: int
     sku: str
-
-    # TODO 2: agrega los campos que faltan, con el tipo correcto
     marca: str
     nombre: str
     precio: float
@@ -44,4 +42,3 @@ class ProductoBase(BaseModel):
 
     class Config:
         from_attributes = True
-

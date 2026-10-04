@@ -28,7 +28,6 @@ class Producto(Base):
     __tablename__ = "productos"
 
     id = Column(Integer, primary_key=True)
-
     sku = Column(String(20), unique=True, nullable=False)
     marca = Column(String(80), nullable=False)
     nombre = Column(String(160), nullable=False)
