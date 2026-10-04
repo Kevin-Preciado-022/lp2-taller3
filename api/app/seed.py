@@ -33,12 +33,14 @@ def cargar_datos():
 
         # TODO 2: Por cada item en 'datos':
         #   a) Busca la categoría por nombre:
-               categoria = db.query(Categoria).filter_by(
-                    nombre=item["categoria"]).first()
+               for item in datos:
+                   categoria = db.query(Categoria).filter_by(nombre=item["categoria"]).first()
         #   b) Si no existe, créala, agrégala con db.add(categoria)
         #      y usa db.flush() para obtener su id sin hacer commit todavía.
-        db.add(categoria)
-        db.flush()
+        if not categoria:
+            categoria = Categoria(nombre=item["categoria"])
+            db.add(categoria)
+            db.flush()
         #   c) Si ya existe un producto con ese sku
         #      (db.query(Producto).filter_by(sku=item["sku"]).first()),
         #      sáltalo con 'continue' para no duplicar.
@@ -46,7 +48,6 @@ def cargar_datos():
             continue
         #   d) Crea el Producto con los campos del JSON y
         #      categoria_id=categoria.id, y agrégalo con db.add(producto).
-        categoria = db.query(Categoria).filter_by(nombre=item["categoria"]).first()
         producto = Producto(
             sku=item["sku"],
             marca=item["marca"],
