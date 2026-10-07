@@ -12,6 +12,12 @@
        genera un enlace por cada una hacia
        url_for('main.index', categoria=categoria.id). Cada dict tiene
        'id' y 'nombre', accesibles con categoria.id / categoria.nombre. #}
+       {%for categoria in categorias %}
+        <a href="{{ url_for('main.index', categoria=categoria.id) }}"
+           class="chip {% if categoria.id == categoria_id %}chip-activo{% endif %}">
+            {{ categoria.nombre }}
+        </a>
+       {% endfor %}
 </div>
 
 <div class="catalogo">
@@ -29,17 +35,23 @@
             <p>{{ producto.categoria.nombre }}</p>
             <p>${{ "{:,.0f}".format(producto.precio) }}</p>
 
-            TODO 4: usa producto.disponible para mostrar
-            "Disponible" o "Agotado" con {% if %}/{% else %}
+            {# TODO 4: usa producto.disponible para mostrar
+               "Disponible" o "Agotado" con {% if %}/{% else %}
+            #}
+            {% if producto.disponible %}Disponible{% else %}Agotado{% endif %}
 
             <a href="{{ url_for('main.detalle', sku=producto.sku) }}">Ver detalle</a>
         </div>
     #}
 
     {# TODO 5: Cierra el ciclo con {% endfor %} #}
+    {endfor %}
 
     {# TODO 6 (opcional): usa {% else %} dentro del for para mostrar un
        mensaje si 'productos' llega vacía. #}
+    {% else %}
+        <p>No hay productos disponibles en esta categoría.</p>
+    {% endif %}
 
 </div>
 {% endblock %}
