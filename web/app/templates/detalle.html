@@ -10,11 +10,16 @@
     {# TODO 2: Nombre en un <h2> #}
 
     {# TODO 3: Marca, SKU y categoría (producto.categoria.nombre) #}
+    <p>Marca: {{ producto.marca }}</p>
+    <p>SKU: {{ producto.sku }}</p>
+    <p>Categoría: {{ producto.categoria.nombre }}</p>
 
-    {# TODO 4: Precio formateado:
-       <p>${{ "{:,.0f}".format(producto.precio) }}</p> #}
+    {# TODO 4: Precio formateado: #}
+       <p>${{ "{:,.0f}".format(producto.precio) }}</p> 
 
     {# TODO 5: Stock y disponibilidad (producto.stock, producto.disponible) #}
+    <p>Stock: {{ producto.stock }}</p>
+    <p>Disponibilidad: {{ "En stock" if producto.disponible else "No disponible" }}</p>
 
     <p><a href="{{ url_for('main.index') }}">&larr; Volver al catálogo</a></p>
 </div>
